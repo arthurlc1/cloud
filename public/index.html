@@ -7,8 +7,8 @@
 		<link href="css/index.css" rel="stylesheet" type="text/css" />
 
 	</head>
-	<body>
-		<div ng-app="myApp" ng-controller="myCtrl">
+	<body ng-app>
+		<!-- <div ng-app="myApp" ng-controller="myCtrl"> -->
 			<nav class="{{active}}" ng-click="$event.preventDefault()">
 			<!-- When a link in the menu is clicked, we set the active variable -->
 				<a href="#" class="home" ng-click="active='home'">Home</a>
@@ -17,7 +17,7 @@
 			</nav>
 
 			<p ng-show="active">You chose <b>{{active}}</b></p>
-		</div>
+		<!-- </div> -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 		<script src="js/index.js"></script>
