@@ -9,15 +9,14 @@
 	</head>
 	<body>
 		<div ng-app="myApp" ng-controller="myCtrl">
-			<md-menu>
-			 <!-- Trigger element is a md-button with an icon -->
- 				<md-button ng-click="$mdMenu.open($event)" class="md-icon-button" aria-label="Open sample menu">
-			   		<h1>hey</h1>
-			 	</md-button>
-			 	<md-menu-content>
-			   		<md-menu-item><md-button ng-click="doSomething()">Do Something</md-button></md-menu-item>
-			 	</md-menu-content>
-			</md-menu>	
+			<nav class="{{active}}" ng-click="$event.preventDefault()">
+			<!-- When a link in the menu is clicked, we set the active variable -->
+				<a href="#" class="home" ng-click="active='home'">Home</a>
+				<a href="#" class="about" ng-click="active='about'">About</a>
+				<a href="#" class="contact" ng-click="active='contact'">Contact</a>
+			</nav>
+
+			<p ng-show="active">You chose <b>{{active}}</b></p>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
